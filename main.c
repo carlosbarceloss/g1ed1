@@ -316,7 +316,8 @@ void deleteForId(Plist* pointer, int searchedId){
         if (pointer -> pupils[i].id == searchedId) {
             printf("Você removeu da lista o aluno chamado: %s", pointer -> pupils[i].name);
             clearPupil(pointer, i);
-        } else {
+            break;
+        } else if (i >= pointer -> fl) {
             printf("O código procurado não existe!\n");
         }
     }
