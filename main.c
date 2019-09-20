@@ -12,8 +12,18 @@
 #include <stdbool.h>
 #define MAX 100
 
-typedef struct pupilsList Plist;
-typedef struct pupils Pupils;
+//Structs
+typedef struct pupils {
+    int id, phone;
+    float g1, g2;
+    char mail[MAX], name[MAX];
+}Pupils;
+
+
+typedef struct pupilsList {
+    Pupils pupils[MAX];
+    int fl;
+}Plist;
 
 //Function invocation
 Plist* createList(void);
@@ -28,19 +38,6 @@ void deleteLast(Plist* pointer);
 void deleteForId(Plist* pointer, int searchedId);
 void printMedia(Plist* pointer, int id);
 void printFunc(int i, Plist* pointer);
-
-//Structs
-struct pupils {
-    int id, phone;
-    float g1, g2;
-    char mail[MAX], name[MAX];
-};
-
-
-struct pupilsList {
-    Pupils pupils[MAX];
-    int fl;
-};
 
 //Main
 int main() {
